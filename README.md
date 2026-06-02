@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/SagerNet/sing-box/main/docs/logo.svg" width="120" alt="sing-box">
-</p>
-
 <h1 align="center">Sing-Box Toolkit</h1>
 
 <p align="center">
