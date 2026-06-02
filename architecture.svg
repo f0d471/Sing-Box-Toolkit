@@ -40,10 +40,12 @@
   <rect x="310" y="56" width="200" height="36" rx="8" fill="url(#menuGrad)" opacity="0.95" filter="url(#glow)"/>
   <text x="410" y="79" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">manage.bat</text>
 
-  <text x="180" y="78" text-anchor="middle" fill="#aaa" font-size="11">User / AI Agent</text>
-  <rect x="50" y="64" width="100" height="28" rx="6" fill="#333" stroke="#555" stroke-width="1"/>
-  <text x="100" y="82" text-anchor="middle" fill="#ccc" font-size="10">Double-click</text>
-  <line x1="150" y1="78" x2="305" y2="74" stroke="#ff6b6b" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowOrange)"/>
+  <text x="120" y="70" text-anchor="middle" fill="#aaa" font-size="11">User</text>
+  <text x="120" y="88" text-anchor="middle" fill="#666" font-size="9">Double-click</text>
+  <text x="280" y="70" text-anchor="middle" fill="#aaa" font-size="11">AI Agent</text>
+  <text x="280" y="88" text-anchor="middle" fill="#666" font-size="9">Scripts / API</text>
+  <line x1="140" y1="74" x2="305" y2="74" stroke="#ff6b6b" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowOrange)"/>
+  <line x1="260" y1="74" x2="305" y2="74" stroke="#ff6b6b" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowOrange)"/>
 
   <!-- ===== Layer 2: Menu Engine ===== -->
   <line x1="410" y1="92" x2="410" y2="108" stroke="#e94560" stroke-width="2" marker-end="url(#arrowOrange)"/>
