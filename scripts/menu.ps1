@@ -90,6 +90,9 @@ do {
     Show-MenuItem "6" $(if ($state.Watchdog.Installed) { "Remove Watchdog" } else { "Install Watchdog (anti-freeze)" }) $ready
     Show-MenuItem "7" $(if ($state.Autostart) { "Disable Autostart" } else { "Enable Autostart" }) $ready
     Show-MenuItem "8" "Setup Wizard" $true
+    Show-MenuItem "9" "System Proxy" $ready
+    Show-MenuItem "10" "DNS Tools" $ready
+    Show-MenuItem "11" "Log Viewer" $ready
     Show-MenuItem "0" "Exit" $true
 
     Write-Host ""
@@ -106,7 +109,7 @@ do {
     }
 
     Write-Host ""
-    $choice = Read-Host "  Select [0-8]"
+    $choice = Read-Host "  Select [0-11]"
 
     switch ($choice) {
         "1" {
@@ -165,6 +168,15 @@ do {
         "8" {
             & "$ScriptDir\setup.ps1"
             Pause-Menu
+        }
+        "9" {
+            & "$ScriptDir\sysproxy.ps1"
+        }
+        "10" {
+            & "$ScriptDir\dnstool.ps1"
+        }
+        "11" {
+            & "$ScriptDir\logview.ps1"
         }
         "0" {
             Write-Host ""; Write-Host "Bye!" -ForegroundColor Green

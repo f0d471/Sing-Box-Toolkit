@@ -62,6 +62,18 @@
 
 所有事件记录在 `logs\watchdog.log`，AI Agent 可直接读取诊断。
 
+#### 🖥️ 系统代理开关
+
+一键切换 Windows 系统代理。不想用 TUN 模式时，让浏览器走 `127.0.0.1:10808` 端口，其余应用直连。
+
+#### 🌐 DNS 工具
+
+查看当前 config.json 中的 DNS 配置摘要 + 一键测速对比阿里/腾讯/Google DNS 延迟。
+
+#### 📜 日志查看器
+
+查看 sing-box 实时日志，支持切换日志级别（trace/debug/info/warn/error），也可查看看门狗历史日志。
+
 #### 🤖 AI 友好
 
 ```
@@ -168,8 +180,11 @@ No Electron. No Node.js. No bloat. Just a few KB of scripts that give sing-box a
 
 ### Features
 
-- **Interactive Menu** — `manage.bat` drives everything: Start / Stop / Status / Node Switch / Update / Watchdog / Autostart / Setup Wizard
+- **Interactive Menu** — `manage.bat` with 11 options: Start, Stop, Status, Nodes, Update, Watchdog, Autostart, Setup, System Proxy, DNS Tools, Log Viewer
 - **Watchdog** — 3 Windows Scheduled Tasks: health check every 5min, daily restart at 4am, auto-restart if memory exceeds 600MB
+- **System Proxy** — Toggle Windows system proxy on/off, use `127.0.0.1:10808` without TUN mode
+- **DNS Tools** — View current DNS config + benchmark Ali/Tencent/Google DNS latency
+- **Log Viewer** — Read sing-box and watchdog logs, change log level on the fly
 - **Status Dashboard** — PID, memory, uptime, TUN adapter, listening ports, domestic/foreign connectivity — one screen
 - **Node Switching** — Built-in YACD dashboard at `http://127.0.0.1:9090/ui`
 - **AI-Native** — Every component is a file or command. AI agents can read `watchdog.log`, run `status.ps1`, call the Clash API, or restart sing-box — no GUI interaction required.
