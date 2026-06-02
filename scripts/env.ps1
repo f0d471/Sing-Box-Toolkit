@@ -122,25 +122,37 @@ function Test-TunExists {
 }
 
 # ---- 网络连通性 ----
+function Test-TcpPort {
+    param(
+        [string]$HostName,
+        [int]$Port,
+        [int]$TimeoutMs = 3000
+    )
+    try {
+        $client = New-Object System.Net.Sockets.TcpClient
+        $result = $client.BeginConnect($HostName, $Port, $null, $null)
+        if ($result.AsyncWaitHandle.WaitOne($TimeoutMs)) {
+            $client.EndConnect($result)
+            $client.Close()
+            return $true
+        }
+        $client.Close()
+        return $false
+    } catch {
+        return $false
+    }
+}
+
 function Test-NetworkConnectivity {
     $results = @{ Domestic = $false; Foreign = $false; ProxyPort = $false }
 
-    try {
-        $tcp = Test-NetConnection -ComputerName "223.5.5.5" -Port 53 -WarningAction SilentlyContinue -ErrorAction SilentlyContinue
-        $results.Domestic = $tcp.TcpTestSucceeded
-    } catch { }
-    try {
-        $tcp = Test-NetConnection -ComputerName "www.baidu.com" -Port 443 -WarningAction SilentlyContinue -ErrorAction SilentlyContinue
-        $results.Domestic = $results.Domestic -or $tcp.TcpTestSucceeded
-    } catch { }
-    try {
-        $tcp = Test-NetConnection -ComputerName "www.google.com" -Port 443 -WarningAction SilentlyContinue -ErrorAction SilentlyContinue
-        $results.Foreign = $tcp.TcpTestSucceeded
-    } catch { }
-    try {
-        $tcp = Test-NetConnection -ComputerName "127.0.0.1" -Port 10808 -WarningAction SilentlyContinue -ErrorAction SilentlyContinue
-        $results.ProxyPort = $tcp.TcpTestSucceeded
-    } catch { }
+    $results.Domestic = Test-TcpPort "223.5.5.5" 53
+    if (-not $results.Domestic) {
+        $results.Domestic = Test-TcpPort "www.baidu.com" 443
+    }
+
+    $results.Foreign   = Test-TcpPort "www.google.com" 443
+    $results.ProxyPort = Test-TcpPort "127.0.0.1" 10808
 
     return $results
 }

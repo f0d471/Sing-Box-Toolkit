@@ -120,8 +120,8 @@ function Invoke-SingleCheck {
         }
 
         try {
-            $netOk = Test-NetConnection -ComputerName "223.5.5.5" -Port 53 -WarningAction SilentlyContinue -ErrorAction SilentlyContinue
-            if (-not $netOk.TcpTestSucceeded) {
+            $netOk = Test-TcpPort "223.5.5.5" 53 3000
+            if (-not $netOk) {
                 Write-Log "ERROR" "Network unreachable (TCP 223.5.5.5:53)"
                 $healthy = $false; $reason = "Network down"
             }

@@ -121,7 +121,10 @@ do {
         "2" {
             if (-not $state.IsRunning) { Write-Host "Not running" -ForegroundColor Yellow; Pause-Menu; continue }
             & "$ScriptDir\stop.ps1"
-            Pause-Menu
+            Write-Host ""
+            Write-Host "Proxy 已停止，请关闭此窗口。" -ForegroundColor Green
+            Read-Host "按 Enter 退出"
+            $choice = "0"
         }
         "3" {
             & "$ScriptDir\status.ps1"
