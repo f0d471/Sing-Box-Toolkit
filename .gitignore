@@ -1,0 +1,19 @@
+# User-provided binary & config
+sing-box.exe
+config.json
+config.backup.json
+
+# Runtime data
+logs/
+backup/
+*.log
+
+# Screenshot source file
+34fab05819323d191500714cf5cf57e4.png
+
+# Claude Code
+.claude/
+
+# OS files
+Thumbs.db
+Desktop.ini
