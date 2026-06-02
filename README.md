@@ -117,7 +117,10 @@ sing-box-toolkit/
 │   ├── start.ps1 / stop.ps1
 │   ├── status.ps1           ← 诊断面板
 │   ├── update.ps1           ← 订阅更新
-│   └── watchdog.ps1         ← 健康守护
+│   ├── watchdog.ps1         ← 健康守护
+│   ├── sysproxy.ps1         ← 系统代理开关
+│   ├── dnstool.ps1          ← DNS 工具
+│   └── logview.ps1          ← 日志查看
 │
 ├── ui/                      ← YACD 面板
 ├── logs/                    ← watchdog.log
