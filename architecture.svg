@@ -23,6 +23,9 @@
     <marker id="arrowOrange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
       <polygon points="0 0, 10 3.5, 0 7" fill="#ff6b6b"/>
     </marker>
+    <marker id="arrowOrangeL" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="10 0, 0 3.5, 10 7" fill="#ff6b6b"/>
+    </marker>
     <marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
       <polygon points="0 0, 10 3.5, 0 7" fill="#00d4ff"/>
     </marker>
@@ -40,12 +43,17 @@
   <rect x="310" y="56" width="200" height="36" rx="8" fill="url(#menuGrad)" opacity="0.95" filter="url(#glow)"/>
   <text x="410" y="79" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">manage.bat</text>
 
-  <text x="120" y="70" text-anchor="middle" fill="#aaa" font-size="11">User</text>
-  <text x="120" y="88" text-anchor="middle" fill="#666" font-size="9">Double-click</text>
-  <text x="280" y="70" text-anchor="middle" fill="#aaa" font-size="11">AI Agent</text>
-  <text x="280" y="88" text-anchor="middle" fill="#666" font-size="9">Scripts / API</text>
-  <line x1="140" y1="74" x2="305" y2="74" stroke="#ff6b6b" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowOrange)"/>
-  <line x1="260" y1="74" x2="305" y2="74" stroke="#ff6b6b" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowOrange)"/>
+  <!-- Left: Human user -->
+  <text x="120" y="64" text-anchor="middle" fill="#aaa" font-size="11">User</text>
+  <text x="120" y="80" text-anchor="middle" fill="#666" font-size="9">Double-click .bat</text>
+
+  <!-- Right: AI agent -->
+  <text x="700" y="64" text-anchor="middle" fill="#aaa" font-size="11">AI Agent</text>
+  <text x="700" y="80" text-anchor="middle" fill="#666" font-size="9">Scripts / API calls</text>
+
+  <!-- Arrows from both sides to manage.bat -->
+  <line x1="170" y1="74" x2="305" y2="74" stroke="#ff6b6b" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowOrange)"/>
+  <line x1="650" y1="74" x2="515" y2="74" stroke="#ff6b6b" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowOrangeL)"/>
 
   <!-- ===== Layer 2: Menu Engine ===== -->
   <line x1="410" y1="92" x2="410" y2="108" stroke="#e94560" stroke-width="2" marker-end="url(#arrowOrange)"/>
